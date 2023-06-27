@@ -2,8 +2,6 @@
 * [Train on Custom Dataset](#Train-on-Custom-Dataset)
 * [Inference](#Inference)
 * [Evaluation](#Evaluation)
-* [Available Models](#A-List-of-All-Model-Flags-to-Use-With-the-Training-Script)
-* [Tutorials](#Tutorials)
 
 ## Setup on Ubuntu
 
@@ -262,9 +260,3 @@ You can use the following command to show a table for **class-wise Average Preci
 ```
 python eval.py --model fasterrcnn_resnet50_fpn_v2 --weights outputs/training/trial/best_model.pth --data data_configs/aquarium.yaml --batch 4 --verbose
 ```
-
-## Tutorials
-
-* [Wheat Detection using Faster RCNN and PyTorch](https://debuggercafe.com/wheat-detection-using-faster-rcnn-and-pytorch/)
-* [Plant Disease Detection using the PlantDoc Dataset and PyTorch Faster RCNN](https://debuggercafe.com/plant-disease-detection-using-plantdoc/)
-* [Small Scale Traffic Light Detection using PyTorch](https://debuggercafe.com/small-scale-traffic-light-detection/)
