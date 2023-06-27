@@ -212,14 +212,6 @@ IoU metric: bbox
 SAVING PLOTS COMPLETE...
 ```
 
-## Distributed Training
-
-**Training on 2 GPUs**:
-
-```
-export CUDA_VISIBLE_DEVICES=0,1
-python -m torch.distributed.launch --nproc_per_node=2 --use_env train.py --data data_configs/smoke.yaml --epochs 100 --model fasterrcnn_resnet50_fpn --name smoke_training --batch 16
-```
 
 ## Inference
 
@@ -269,49 +261,6 @@ You can use the following command to show a table for **class-wise Average Preci
 
 ```
 python eval.py --model fasterrcnn_resnet50_fpn_v2 --weights outputs/training/trial/best_model.pth --data data_configs/aquarium.yaml --batch 4 --verbose
-```
-
-## A List of All Model Flags to Use With the Training Script
-
-The following command expects the `coco` dataset to be present one directory inside the `input` folder in XML format. You can find the dataset [here on Kaggle](https://www.kaggle.com/datasets/sovitrath/coco-xml-format). 
-
-```
-# Usage 
-python train.py --model fasterrcnn_resnet50_fpn_v2 --data data_configs/coco.yaml
-```
-
-**OR USE ANY ONE OF THE FOLLOWING**
-
-```
-[
-    'fasterrcnn_convnext_small',
-    'fasterrcnn_convnext_tiny',
-    'fasterrcnn_custom_resnet', 
-    'fasterrcnn_darknet',
-    'fasterrcnn_efficientnet_b0',
-    'fasterrcnn_efficientnet_b4',
-    'fasterrcnn_mbv3_small_nano_head',
-    'fasterrcnn_mbv3_large',
-    'fasterrcnn_mini_darknet_nano_head',
-    'fasterrcnn_mini_darknet',
-    'fasterrcnn_mini_squeezenet1_1_small_head',
-    'fasterrcnn_mini_squeezenet1_1_tiny_head',
-    'fasterrcnn_mobilenetv3_large_320_fpn', # Torchvision COCO pretrained
-    'fasterrcnn_mobilenetv3_large_fpn', # Torchvision COCO pretrained
-    'fasterrcnn_nano',
-    'fasterrcnn_resnet18',
-    'fasterrcnn_resnet50_fpn_v2', # Torchvision COCO pretrained
-    'fasterrcnn_resnet50_fpn',  # Torchvision COCO pretrained
-    'fasterrcnn_resnet101',
-    'fasterrcnn_resnet152',
-    'fasterrcnn_squeezenet1_0',
-    'fasterrcnn_squeezenet1_1_small_head',
-    'fasterrcnn_squeezenet1_1',
-    'fasterrcnn_vitdet',
-    'fasterrcnn_vitdet_tiny',
-    'fasterrcnn_mobilevit_xxs',
-    'fasterrcnn_regnet_y_400mf'
-]
 ```
 
 ## Tutorials
